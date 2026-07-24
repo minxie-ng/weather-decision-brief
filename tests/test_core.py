@@ -101,7 +101,7 @@ class PrepareDecisionTests(unittest.TestCase):
             "--activity",
             "kayaking",
             "--forecast-file",
-            "examples/singapore-hiking-forecast.json",
+            "tests/fixtures/sample-hiking-forecast.json",
         )
 
         self.assertEqual(output["status"], "decision_input_ready")
@@ -123,7 +123,7 @@ class PrepareDecisionTests(unittest.TestCase):
                     "--activity",
                     activity,
                     "--forecast-file",
-                    "examples/singapore-hiking-forecast.json",
+                    "tests/fixtures/sample-hiking-forecast.json",
                 )
 
                 self.assertEqual(output["status"], "decision_input_ready")
@@ -145,7 +145,7 @@ class PrepareDecisionTests(unittest.TestCase):
                     "--activity",
                     requested_activity,
                     "--forecast-file",
-                    "examples/singapore-hiking-forecast.json",
+                    "tests/fixtures/sample-hiking-forecast.json",
                 )
 
                 self.assertEqual(output["status"], "decision_input_ready")

@@ -142,13 +142,13 @@ After forecast retrieval succeeds, create the decision-input package with:
 
     python3 scripts/prepare_decision.py \
       --activity hiking \
-      --forecast-file examples/singapore-hiking-forecast.json
+      --forecast-file tests/fixtures/sample-hiking-forecast.json
 
 Optional personal constraints may be supplied more than once:
 
     python3 scripts/prepare_decision.py \
       --activity hiking \
-      --forecast-file examples/singapore-hiking-forecast.json \
+      --forecast-file tests/fixtures/sample-hiking-forecast.json \
       --constraint "limited access to shelter" \
       --constraint "heat sensitivity"
 
