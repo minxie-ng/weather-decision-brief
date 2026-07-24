@@ -136,6 +136,24 @@ Consider:
 * duration and exposure;
 * personal mobility or fitness constraints when provided.
 
+## Decision Preparation
+
+After forecast retrieval succeeds, create the decision-input package with:
+
+    python3 scripts/prepare_decision.py \
+      --activity hiking \
+      --forecast-file examples/singapore-hiking-forecast.json
+
+Optional personal constraints may be supplied more than once:
+
+    python3 scripts/prepare_decision.py \
+      --activity hiking \
+      --forecast-file examples/singapore-hiking-forecast.json \
+      --constraint "limited access to shelter" \
+      --constraint "heat sensitivity"
+
+Continue only when the returned status is `decision_input_ready`.
+
 ## Decision Generation and Validation
 
 Use the prepared decision-input package to produce a structured decision before writing any human-readable brief.
