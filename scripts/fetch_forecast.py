@@ -9,7 +9,7 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -101,8 +101,8 @@ def extract_hourly_window(
     activity_date: str,
     start_time: str,
     end_time: str,
-) -> dict[str, list[Any]]:
-    """Keep only forecast rows inside the requested local-time window."""
+) -> tuple[dict[str, list[Any]], dict[str, str]]:
+    """Keep forecast rows inside the resolved local-time window."""
     try:
         start = datetime.fromisoformat(
             f"{activity_date}T{start_time}"
@@ -115,11 +115,14 @@ def extract_hourly_window(
             "Date and time must use YYYY-MM-DD and HH:MM formats."
         ) from error
 
-    if end <= start:
+    if end == start:
         raise RuntimeError(
-            "End time must be later than start time. "
-            "Cross-midnight windows are not implemented yet."
+            "Start and end times cannot be identical. "
+            "Provide a clear bounded activity window."
         )
+
+    if end < start:
+        end += timedelta(days=1)
 
     times = hourly.get("time")
 
@@ -153,7 +156,10 @@ def extract_hourly_window(
             if index < len(values)
         ]
 
-    return extracted
+    return extracted, {
+        "start": start.isoformat(timespec="minutes"),
+        "end_exclusive": end.isoformat(timespec="minutes"),
+    }
 
 
 def numeric_pairs(
@@ -473,10 +479,11 @@ def main() -> int:
             )
 
         selected_hourly = hourly_data
+        resolved_window = None
         window_summary = None
 
         if all(window_arguments):
-            selected_hourly = extract_hourly_window(
+            selected_hourly, resolved_window = extract_hourly_window(
                 hourly=hourly_data,
                 activity_date=args.date,
                 start_time=args.start,
@@ -504,15 +511,7 @@ def main() -> int:
                         "utc_offset_seconds"
                     ),
                     "hourly_units": forecast.get("hourly_units"),
-                    "requested_window": (
-                        {
-                            "date": args.date,
-                            "start": args.start,
-                            "end_exclusive": args.end,
-                        }
-                        if all(window_arguments)
-                        else None
-                    ),
+                    "requested_window": resolved_window,
                     "window_summary": window_summary,
                     "hourly": selected_hourly,
                 },

@@ -159,6 +159,23 @@ After producing the structured JSON, validate it with:
 ```bash
 python3 scripts/validate_decision.py PATH_TO_DECISION_JSON
 
+## Semantic Consistency Review
+
+After structural validation succeeds, review the decision for semantic consistency before producing the user-facing brief.
+
+Check that:
+
+- the verdict is supported by the key factors and reasoning;
+- the reasoning does not contradict deterministic severities;
+- suggested actions are appropriate for the verdict;
+- assumptions and limitations are not presented as verified facts;
+- unsupported profiles do not receive unjustifiably high confidence;
+- the brief does not introduce conclusions absent from the structured decision.
+
+If a contradiction is found, revise the structured decision and run structural validation again.
+
+Structural validity does not guarantee semantic consistency.
+
 ## Human-Readable Brief
 
 Generate the user-facing brief only after the structured decision passes validation.
