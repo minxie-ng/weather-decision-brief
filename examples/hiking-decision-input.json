@@ -1,0 +1,119 @@
+{
+  "status": "decision_input_ready",
+  "activity": "hiking",
+  "profile_support": "supported",
+  "activity_profile": "hiking",
+  "resolved_location": {
+    "name": "Singapore",
+    "admin1": null,
+    "country": "Singapore",
+    "country_code": "SG",
+    "latitude": 1.28967,
+    "longitude": 103.85007,
+    "timezone": "Asia/Singapore"
+  },
+  "timezone": "Asia/Singapore",
+  "date": "2026-07-26",
+  "time_window": {
+    "start": "08:00",
+    "end_exclusive": "11:00"
+  },
+  "weather_evidence": {
+    "sample_count": 3,
+    "rain_probability": {
+      "maximum_percent": 77.0,
+      "severity": "high",
+      "peak_times": [
+        "2026-07-26T09:00"
+      ]
+    },
+    "precipitation": {
+      "total_mm": 3.8,
+      "total_severity": "moderate",
+      "maximum_hourly_mm": 2.5,
+      "peak_times": [
+        "2026-07-26T08:00"
+      ]
+    },
+    "apparent_temperature": {
+      "maximum_c": 30.6,
+      "severity": "moderate",
+      "peak_times": [
+        "2026-07-26T10:00"
+      ]
+    },
+    "wind": {
+      "maximum_speed_kmh": 10.0,
+      "speed_severity": "low",
+      "speed_peak_times": [
+        "2026-07-26T10:00"
+      ],
+      "maximum_gust_kmh": 25.6,
+      "gust_severity": "low",
+      "gust_peak_times": [
+        "2026-07-26T10:00"
+      ]
+    },
+    "visibility": {
+      "minimum_m": 2720.0,
+      "severity": "high",
+      "worst_times": [
+        "2026-07-26T08:00"
+      ]
+    }
+  },
+  "profile_guidance": {
+    "support": "supported",
+    "exposure_level": "high",
+    "important_factors": [
+      "rain_probability",
+      "precipitation",
+      "apparent_temperature",
+      "wind",
+      "visibility"
+    ],
+    "interpretation": {
+      "rain_probability": {
+        "moderate": "Rain may affect comfort and trail conditions.",
+        "high": "Rain may create slippery trails and sustained exposure.",
+        "severe": "Rain risk may make exposed or long routes unsuitable."
+      },
+      "precipitation": {
+        "moderate": "Some trail wetness and reduced comfort are possible.",
+        "high": "Significant trail wetness, drainage issues, and slipping risk are possible.",
+        "severe": "Heavy accumulated rainfall may make the route unsuitable."
+      },
+      "apparent_temperature": {
+        "moderate": "Plan hydration and rest breaks.",
+        "high": "Heat exposure may require a shorter route or earlier timing.",
+        "severe": "Sustained heat may make the hike unsuitable."
+      },
+      "wind": {
+        "moderate": "Exposed sections may feel uncomfortable.",
+        "high": "Balance, branch-fall, and exposed-route risks increase.",
+        "severe": "Strong wind may make exposed hiking unsuitable."
+      },
+      "visibility": {
+        "moderate": "Navigation and route awareness may be affected.",
+        "high": "Poor visibility may make route-finding difficult.",
+        "severe": "Very poor visibility may make hiking unsuitable."
+      }
+    },
+    "common_adjustments": [
+      "start_earlier",
+      "shorten_route",
+      "choose_sheltered_route",
+      "increase_rest_breaks",
+      "carry_rain_protection",
+      "review_latest_forecast_before_departure"
+    ]
+  },
+  "personal_constraints": [],
+  "assumptions": [
+    "A general-user fitness and mobility baseline was used."
+  ],
+  "limitations": [
+    "Official weather alerts and air-quality data were not checked."
+  ],
+  "agent_task": "Use the classified weather evidence, activity profile, timing, and personal constraints to produce one allowed verdict: proceed, adjust, postpone, or insufficient_information. Do not change the supplied weather severities."
+}

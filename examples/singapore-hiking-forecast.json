@@ -1,0 +1,133 @@
+{
+  "status": "success",
+  "query": "Singapore",
+  "resolved_location": {
+    "name": "Singapore",
+    "admin1": null,
+    "country": "Singapore",
+    "country_code": "SG",
+    "latitude": 1.28967,
+    "longitude": 103.85007,
+    "timezone": "Asia/Singapore"
+  },
+  "forecast": {
+    "latitude": 1.3005272,
+    "longitude": 103.862564,
+    "timezone": "Asia/Singapore",
+    "timezone_abbreviation": "GMT+8",
+    "utc_offset_seconds": 28800,
+    "hourly_units": {
+      "time": "iso8601",
+      "temperature_2m": "°C",
+      "apparent_temperature": "°C",
+      "relative_humidity_2m": "%",
+      "precipitation_probability": "%",
+      "precipitation": "mm",
+      "weather_code": "wmo code",
+      "visibility": "m",
+      "wind_speed_10m": "km/h",
+      "wind_gusts_10m": "km/h"
+    },
+    "requested_window": {
+      "date": "2026-07-26",
+      "start": "08:00",
+      "end_exclusive": "11:00"
+    },
+    "window_summary": {
+      "sample_count": 3,
+      "rain_probability": {
+        "maximum_percent": 77.0,
+        "severity": "high",
+        "peak_times": [
+          "2026-07-26T09:00"
+        ]
+      },
+      "precipitation": {
+        "total_mm": 3.8,
+        "total_severity": "moderate",
+        "maximum_hourly_mm": 2.5,
+        "peak_times": [
+          "2026-07-26T08:00"
+        ]
+      },
+      "apparent_temperature": {
+        "maximum_c": 30.6,
+        "severity": "moderate",
+        "peak_times": [
+          "2026-07-26T10:00"
+        ]
+      },
+      "wind": {
+        "maximum_speed_kmh": 10.0,
+        "speed_severity": "low",
+        "speed_peak_times": [
+          "2026-07-26T10:00"
+        ],
+        "maximum_gust_kmh": 25.6,
+        "gust_severity": "low",
+        "gust_peak_times": [
+          "2026-07-26T10:00"
+        ]
+      },
+      "visibility": {
+        "minimum_m": 2720.0,
+        "severity": "high",
+        "worst_times": [
+          "2026-07-26T08:00"
+        ]
+      }
+    },
+    "hourly": {
+      "time": [
+        "2026-07-26T08:00",
+        "2026-07-26T09:00",
+        "2026-07-26T10:00"
+      ],
+      "temperature_2m": [
+        24.8,
+        25.2,
+        26.4
+      ],
+      "apparent_temperature": [
+        29.8,
+        29.9,
+        30.6
+      ],
+      "relative_humidity_2m": [
+        95,
+        93,
+        84
+      ],
+      "precipitation_probability": [
+        75,
+        77,
+        76
+      ],
+      "precipitation": [
+        2.5,
+        0.9,
+        0.4
+      ],
+      "weather_code": [
+        81,
+        53,
+        51
+      ],
+      "visibility": [
+        2720.0,
+        4140.0,
+        5200.0
+      ],
+      "wind_speed_10m": [
+        6.9,
+        8.9,
+        10.0
+      ],
+      "wind_gusts_10m": [
+        17.6,
+        20.5,
+        25.6
+      ]
+    }
+  }
+}

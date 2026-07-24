@@ -1,0 +1,38 @@
+{
+  "activity": "hiking",
+  "profile_support": "supported",
+  "activity_profile": "hiking",
+  "resolved_location": {
+    "name": "Singapore",
+    "latitude": 1.28967,
+    "longitude": 103.85007
+  },
+  "timezone": "Asia/Singapore",
+  "date": "2026-07-26",
+  "time_window": {
+    "start": "08:00",
+    "end_exclusive": "11:00"
+  },
+  "verdict": "adjust",
+  "confidence": "high",
+  "key_factors": [
+    {
+      "factor": "apparent_temperature",
+      "severity": "moderate",
+      "reason": "Heat exposure may increase during the activity window."
+    }
+  ],
+  "reasoning": "The hike can proceed, but heat precautions and a final forecast review are advisable.",
+  "suggested_actions": [
+    "Start earlier where possible.",
+    "Carry sufficient water.",
+    "Plan rest breaks.",
+    "Review the latest forecast before departure."
+  ],
+  "assumptions": [
+    "A general-user fitness and mobility baseline was used."
+  ],
+  "limitations": [
+    "Official weather alerts and air-quality data were not checked."
+  ]
+}

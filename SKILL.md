@@ -117,6 +117,64 @@ Consider:
 * duration and exposure;
 * personal mobility or fitness constraints when provided.
 
+## Decision Generation and Validation
+
+Use the prepared decision-input package to produce a structured decision before writing any human-readable brief.
+
+The structured decision must follow `config/decision-schema.yaml` and contain:
+
+- activity;
+- profile support and activity profile;
+- resolved location, timezone, date, and time window;
+- verdict;
+- confidence;
+- key factors;
+- reasoning;
+- suggested actions;
+- assumptions;
+- limitations.
+
+Use only these verdicts:
+
+- `proceed`
+- `adjust`
+- `postpone`
+- `insufficient_information`
+
+Do not change the deterministic weather severities supplied in the decision-input package.
+
+Combine the following contextually:
+
+- classified weather evidence;
+- factor timing and duration;
+- activity-profile guidance;
+- exposure level;
+- personal constraints;
+- assumptions and limitations.
+
+Only explicitly configured hard-stop conditions may automatically override the contextual decision.
+
+After producing the structured JSON, validate it with:
+
+```bash
+python3 scripts/validate_decision.py PATH_TO_DECISION_JSON
+
+## Human-Readable Brief
+
+Generate the user-facing brief only after the structured decision passes validation.
+
+The brief must:
+
+- begin with the validated verdict;
+- summarise the most important reasoning;
+- include the suggested actions;
+- state material assumptions and limitations;
+- remain consistent with the structured decision.
+
+Do not introduce new weather facts, severities, actions, or conclusions that are absent from the validated structured decision.
+
+If the brief contradicts the structured verdict or omits a material limitation, treat the output as invalid and repair it.
+
 ## Output Format
 
 Return:
