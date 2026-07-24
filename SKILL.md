@@ -2,7 +2,7 @@
 
 name: weather-decision-brief
 description: Use when a user needs to decide whether or how to proceed with a planned activity based on forecast weather, including commuting, hiking, running, cycling, and outdoor events. Produces a proceed, adjust, postpone, or insufficient-information recommendation. Do not use for general weather reports without a decision.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 # Weather Decision Brief
 
@@ -14,7 +14,7 @@ It retrieves relevant forecast data and evaluates weather factors against the ac
 
 Instead of only summarising the weather, it returns a practical `proceed`, `adjust`, `postpone`, or `insufficient_information` recommendation with reasons and suggested actions.
 
-The first working version supports commuting and hiking.
+The V1 skill supports commuting, hiking, running, cycling, and outdoor events.
 
 ## When to Use
 
@@ -71,6 +71,7 @@ Example:
 
 ```bash
 python3 scripts/fetch_forecast.py "Singapore"
+```
 
 Handle these statuses explicitly:
 
@@ -82,14 +83,6 @@ invalid_time_window
 forecast_window_unavailable
 processing_error
 configuration_error
-
-In Nano:
-
-1. Search for `## Forecast Retrieval`
-2. Delete from that heading until just before `## Procedure` or `## Workflow`
-3. Paste the full block above
-4. Save with `Ctrl + O`, press Enter
-5. Exit with `Ctrl + X`
 
 ## Procedure
 
@@ -195,6 +188,7 @@ After producing the structured JSON, validate it with:
 
 ```bash
 python3 scripts/validate_decision.py PATH_TO_DECISION_JSON
+```
 
 ## Semantic Consistency Review
 
@@ -259,9 +253,9 @@ Do not invent missing weather data.
 
 ## Boundaries
 
-The first working version supports commuting and hiking.
+The V1 skill supports commuting, hiking, running, cycling, and outdoor events.
 
-Running, cycling, and outdoor events remain part of the intended V1 scope but are not yet implemented in this version.
+Unsupported activities use the `general_outdoor` fallback profile with reduced confidence.
 
 Do not provide medical clearance or guarantee safety.
 
