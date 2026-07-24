@@ -63,6 +63,15 @@ When the user gives a vague period such as morning, afternoon, or evening withou
 
 Resolve all required inputs before retrieving forecast data.
 
+## Forecast Retrieval
+
+Use `scripts/fetch_forecast.py` to resolve a place name and retrieve hourly forecast data from Open-Meteo.
+
+Example:
+
+```bash
+python3 scripts/fetch_forecast.py "Singapore"
+
 ## Procedure
 
 1. Identify the activity, location, date, and bounded time window.
