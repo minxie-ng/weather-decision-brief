@@ -1,4 +1,4 @@
-version: "0.1"
+version: "0.2"
 
 profiles:
   hiking:
@@ -90,6 +90,145 @@ profiles:
       - allow_extra_travel_time
       - reduce_outdoor_walking
       - review_latest_forecast_before_departure
+
+  running:
+    support: supported
+    exposure_level: high
+
+    important_factors:
+      - apparent_temperature
+      - rain_probability
+      - precipitation
+      - wind
+      - visibility
+
+    interpretation:
+      apparent_temperature:
+        moderate: "Reduce pace if needed and plan hydration."
+        high: "Consider an earlier or later start, a shorter route, or lower intensity."
+        severe: "Sustained heat may make outdoor running unsuitable."
+
+      rain_probability:
+        moderate: "Rain may affect comfort and route conditions."
+        high: "Prepare for wet surfaces and possible disruption during the run."
+        severe: "Consider changing the timing or using an indoor alternative."
+
+      precipitation:
+        moderate: "Wet surfaces may require slower pacing and suitable footwear."
+        high: "Slippery surfaces, reduced comfort, and poor footing are possible."
+        severe: "Heavy rain may make the planned route unsuitable."
+
+      wind:
+        moderate: "Exposed sections may require additional effort."
+        high: "Strong wind may affect pace, stability, and route choice."
+        severe: "Very strong wind may make exposed running unsuitable."
+
+      visibility:
+        moderate: "Use visible clothing and remain alert near roads."
+        high: "Avoid poorly lit or traffic-exposed routes."
+        severe: "Very poor visibility may make outdoor running unsuitable."
+
+    common_adjustments:
+      - start_earlier_or_later
+      - reduce_pace
+      - shorten_route
+      - increase_hydration
+      - choose_sheltered_route
+      - use_indoor_alternative
+      - review_latest_forecast_before_departure
+
+  cycling:
+    support: supported
+    exposure_level: high
+
+    important_factors:
+      - wind
+      - visibility
+      - rain_probability
+      - precipitation
+      - apparent_temperature
+
+    interpretation:
+      wind:
+        moderate: "Headwinds may increase effort and crosswinds may affect comfort."
+        high: "Strong or gusty wind may affect balance and control on exposed routes."
+        severe: "Very strong wind may make exposed cycling unsuitable."
+
+      visibility:
+        moderate: "Use lights and high-visibility equipment."
+        high: "Road awareness and driver visibility may be significantly reduced."
+        severe: "Very poor visibility may make road cycling unsuitable."
+
+      rain_probability:
+        moderate: "Carry rain protection and prepare for wet-road conditions."
+        high: "Wet-road grip, braking distance, and visibility may be affected."
+        severe: "Consider alternative transport or changing the timing."
+
+      precipitation:
+        moderate: "Reduce speed and allow greater braking distance."
+        high: "Standing water, poor grip, and reduced control are possible."
+        severe: "Heavy rain may make the route unsuitable."
+
+      apparent_temperature:
+        moderate: "Plan hydration and adjust effort."
+        high: "Reduce intensity or choose a shorter route."
+        severe: "Sustained heat may make outdoor cycling unsuitable."
+
+    common_adjustments:
+      - reduce_speed
+      - choose_sheltered_route
+      - avoid_exposed_sections
+      - increase_braking_distance
+      - use_lights_and_visible_clothing
+      - switch_transport_mode
+      - review_latest_forecast_before_departure
+
+  outdoor_events:
+    support: supported
+    exposure_level: variable
+
+    important_factors:
+      - rain_probability
+      - precipitation
+      - apparent_temperature
+      - wind
+      - visibility
+
+    interpretation:
+      rain_probability:
+        moderate: "Prepare sheltered areas and wet-weather contingencies."
+        high: "Setup, attendance, and outdoor programming may be disrupted."
+        severe: "Consider activating an indoor venue or postponement plan."
+
+      precipitation:
+        moderate: "Protect equipment and prepare covered areas."
+        high: "Ground conditions, electrical equipment, and attendee movement may be affected."
+        severe: "Heavy rainfall may make the venue unsuitable."
+
+      apparent_temperature:
+        moderate: "Provide water, shade, and rest areas."
+        high: "Reduce prolonged exposure and adjust the programme."
+        severe: "Sustained heat may make the event unsuitable without strong mitigation."
+
+      wind:
+        moderate: "Secure lightweight signage and loose equipment."
+        high: "Tents, temporary structures, and equipment may require additional controls."
+        severe: "Strong wind may make temporary outdoor structures unsafe."
+
+      visibility:
+        moderate: "Improve lighting, signage, and wayfinding."
+        high: "Attendee movement and transport access may be affected."
+        severe: "Very poor visibility may make the event unsuitable."
+
+    common_adjustments:
+      - activate_wet_weather_plan
+      - move_activities_indoors
+      - provide_shelter_and_water
+      - secure_equipment
+      - adjust_setup_time
+      - shorten_programme
+      - communicate_changes_to_attendees
+      - review_latest_forecast_before_setup
 
 fallback:
   support: best_effort

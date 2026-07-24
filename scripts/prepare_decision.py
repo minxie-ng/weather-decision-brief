@@ -57,13 +57,30 @@ def resolve_profile(
         raise RuntimeError("Activity profiles configuration is invalid.")
 
     normalized_activity = activity.strip().lower()
-    profile = profiles.get(normalized_activity)
+
+    activity_aliases = {
+        "jogging": "running",
+        "run": "running",
+        "bike ride": "cycling",
+        "biking": "cycling",
+        "cycle": "cycling",
+        "outdoor event": "outdoor_events",
+        "outdoor-event": "outdoor_events",
+        "event outdoors": "outdoor_events",
+    }
+
+    canonical_activity = activity_aliases.get(
+        normalized_activity,
+        normalized_activity.replace("-", "_").replace(" ", "_"),
+    )
+
+    profile = profiles.get(canonical_activity)
 
     if isinstance(profile, dict):
         return {
             "requested_activity": normalized_activity,
             "profile_support": "supported",
-            "activity_profile": normalized_activity,
+            "activity_profile": canonical_activity,
             "profile_guidance": profile,
             "fallback_limitation": None,
         }

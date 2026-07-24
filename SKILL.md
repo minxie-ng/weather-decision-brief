@@ -72,6 +72,25 @@ Example:
 ```bash
 python3 scripts/fetch_forecast.py "Singapore"
 
+Handle these statuses explicitly:
+
+success
+location_ambiguous
+location_not_found
+invalid_selection
+invalid_time_window
+forecast_window_unavailable
+processing_error
+configuration_error
+
+In Nano:
+
+1. Search for `## Forecast Retrieval`
+2. Delete from that heading until just before `## Procedure` or `## Workflow`
+3. Paste the full block above
+4. Save with `Ctrl + O`, press Enter
+5. Exit with `Ctrl + X`
+
 ## Procedure
 
 1. Identify the activity, location, date, and bounded time window.
