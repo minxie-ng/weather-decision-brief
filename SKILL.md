@@ -63,6 +63,23 @@ When the user gives a vague period such as morning, afternoon, or evening withou
 
 Resolve all required inputs before retrieving forecast data.
 
+## Dependency Handling
+
+The Python tools require the dependencies declared in `requirements.txt`.
+
+If a tool reports that PyYAML is missing:
+
+1. Explain that the dependency is required for reading the skill configuration.
+2. Show the exact proposed command:
+
+   `python3 -m pip install -r requirements.txt`
+
+3. Ask the user for explicit permission before running the command.
+4. If permission is granted, run the command and retry the failed operation once.
+5. If installation is declined or fails, explain that the skill cannot continue until the dependency is available.
+
+Do not install packages silently or modify the Python environment without permission.
+
 ## Forecast Retrieval
 
 Use `scripts/fetch_forecast.py` to resolve a place name and retrieve hourly forecast data from Open-Meteo.

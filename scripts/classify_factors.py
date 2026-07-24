@@ -8,7 +8,15 @@ import json
 from pathlib import Path
 from typing import Any
 
-import yaml
+try:
+    import yaml
+except ModuleNotFoundError:
+    raise SystemExit(
+        "Missing dependency: PyYAML. "
+        "Ask the user for permission before running: "
+        "python3 -m pip install -r requirements.txt"
+    )
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CONFIG = PROJECT_ROOT / "config" / "weather-thresholds.yaml"
