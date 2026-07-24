@@ -1,0 +1,95 @@
+version: "0.1"
+
+# These are initial project policy thresholds for testing.
+# They are not official safety standards or guarantees.
+
+rain_probability_percent:
+  summary: maximum
+  levels:
+    low:
+      min: 0
+      max_exclusive: 30
+    moderate:
+      min: 30
+      max_exclusive: 60
+    high:
+      min: 60
+      max_exclusive: 80
+    severe:
+      min: 80
+
+precipitation_total_mm:
+  summary: sum
+  levels:
+    low:
+      min: 0
+      max_exclusive: 1
+    moderate:
+      min: 1
+      max_exclusive: 5
+    high:
+      min: 5
+      max_exclusive: 15
+    severe:
+      min: 15
+
+apparent_temperature_c:
+  summary: maximum
+  levels:
+    low:
+      min: -100
+      max_exclusive: 30
+    moderate:
+      min: 30
+      max_exclusive: 35
+    high:
+      min: 35
+      max_exclusive: 40
+    severe:
+      min: 40
+
+wind_speed_kmh:
+  summary: maximum
+  levels:
+    low:
+      min: 0
+      max_exclusive: 20
+    moderate:
+      min: 20
+      max_exclusive: 35
+    high:
+      min: 35
+      max_exclusive: 50
+    severe:
+      min: 50
+
+wind_gusts_kmh:
+  summary: maximum
+  levels:
+    low:
+      min: 0
+      max_exclusive: 30
+    moderate:
+      min: 30
+      max_exclusive: 50
+    high:
+      min: 50
+      max_exclusive: 70
+    severe:
+      min: 70
+
+visibility_m:
+  summary: minimum
+  direction: lower_is_worse
+  levels:
+    severe:
+      max_exclusive: 1000
+    high:
+      min: 1000
+      max_exclusive: 3000
+    moderate:
+      min: 3000
+      max_exclusive: 8000
+    low:
+      min: 8000
+
