@@ -13,7 +13,13 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-from classify_factors import classify_value, load_config
+from classify_factors import ConfigurationError, classify_value, load_config
+
+
+class ForecastWindowUnavailableError(RuntimeError):
+    """Raised when provider data does not cover the requested window."""
+
+
 
 GEOCODING_URL = "https://geocoding-api.open-meteo.com/v1/search"
 FORECAST_URL = "https://api.open-meteo.com/v1/forecast"
@@ -140,7 +146,7 @@ def extract_hourly_window(
             matching_indexes.append(index)
 
     if not matching_indexes:
-        raise RuntimeError(
+        raise ForecastWindowUnavailableError(
             "Forecast does not cover the requested date and time window."
         )
 
@@ -518,6 +524,24 @@ def main() -> int:
             }
         )
         return 0
+
+    except ForecastWindowUnavailableError as error:
+        print_json(
+            {
+                "status": "forecast_window_unavailable",
+                "query": args.location,
+                "message": str(error),
+            }
+        )
+
+    except ConfigurationError as error:
+        print_json(
+            {
+                "status": "configuration_error",
+                "query": args.location,
+                "message": str(error),
+            }
+        )
 
     except RuntimeError as error:
         print_json(

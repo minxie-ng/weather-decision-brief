@@ -14,18 +14,22 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CONFIG = PROJECT_ROOT / "config" / "weather-thresholds.yaml"
 
 
+class ConfigurationError(RuntimeError):
+    """Raised when required configuration is missing or invalid."""
+
+
 def load_config(path: Path) -> dict[str, Any]:
     """Load and validate the YAML threshold configuration."""
     try:
         with path.open("r", encoding="utf-8") as file:
             config = yaml.safe_load(file)
     except FileNotFoundError as error:
-        raise RuntimeError(f"Config file not found: {path}") from error
+        raise ConfigurationError(f"Config file not found: {path}") from error
     except yaml.YAMLError as error:
-        raise RuntimeError(f"Invalid YAML: {error}") from error
+        raise ConfigurationError(f"Invalid YAML: {error}") from error
 
     if not isinstance(config, dict):
-        raise RuntimeError("Threshold config must contain a YAML object.")
+        raise ConfigurationError("Threshold config must contain a YAML object.")
 
     return config
 
