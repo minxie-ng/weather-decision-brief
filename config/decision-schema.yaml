@@ -1,0 +1,54 @@
+version: "0.1"
+
+allowed_verdicts:
+  - proceed
+  - adjust
+  - postpone
+  - insufficient_information
+
+allowed_confidence:
+  - high
+  - medium
+  - low
+
+allowed_profile_support:
+  - supported
+  - best_effort
+
+required_fields:
+  - activity
+  - profile_support
+  - activity_profile
+  - resolved_location
+  - timezone
+  - date
+  - time_window
+  - verdict
+  - confidence
+  - key_factors
+  - reasoning
+  - suggested_actions
+  - assumptions
+  - limitations
+
+field_rules:
+  key_factors:
+    type: list
+    description: Include only factors that materially influenced the verdict.
+
+  suggested_actions:
+    type: list
+    description: Provide practical changes or precautions.
+
+  assumptions:
+    type: list
+    description: State any general-user baseline or inferred context.
+
+  limitations:
+    type: list
+    description: State missing data, provider limits, or unsupported profile constraints.
+
+  time_window:
+    required_fields:
+      - start
+      - end_exclusive

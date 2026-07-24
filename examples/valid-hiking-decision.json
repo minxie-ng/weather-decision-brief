@@ -1,0 +1,30 @@
+{
+  "activity": "hiking",
+  "profile_support": "supported",
+  "activity_profile": "hiking",
+  "resolved_location": {
+    "name": "Bukit Timah",
+    "latitude": 1.3294,
+    "longitude": 103.8021
+  },
+  "timezone": "Asia/Singapore",
+  "date": "2026-07-26",
+  "time_window": {
+    "start": "08:00",
+    "end_exclusive": "11:00"
+  },
+  "verdict": "adjust",
+  "confidence": "high",
+  "key_factors": [],
+  "reasoning": "Rain risk may increase during the activity window.",
+  "suggested_actions": [
+    "Carry rain protection.",
+    "Review the latest forecast before departure."
+  ],
+  "assumptions": [
+    "A general-user fitness baseline was used."
+  ],
+  "limitations": [
+    "Official alert coverage was not checked."
+  ]
+}

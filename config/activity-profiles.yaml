@@ -1,0 +1,98 @@
+version: "0.1"
+
+profiles:
+  hiking:
+    support: supported
+    exposure_level: high
+
+    important_factors:
+      - rain_probability
+      - precipitation
+      - apparent_temperature
+      - wind
+      - visibility
+
+    interpretation:
+      rain_probability:
+        moderate: "Rain may affect comfort and trail conditions."
+        high: "Rain may create slippery trails and sustained exposure."
+        severe: "Rain risk may make exposed or long routes unsuitable."
+
+      precipitation:
+        moderate: "Some trail wetness and reduced comfort are possible."
+        high: "Significant trail wetness, drainage issues, and slipping risk are possible."
+        severe: "Heavy accumulated rainfall may make the route unsuitable."
+
+      apparent_temperature:
+        moderate: "Plan hydration and rest breaks."
+        high: "Heat exposure may require a shorter route or earlier timing."
+        severe: "Sustained heat may make the hike unsuitable."
+
+      wind:
+        moderate: "Exposed sections may feel uncomfortable."
+        high: "Balance, branch-fall, and exposed-route risks increase."
+        severe: "Strong wind may make exposed hiking unsuitable."
+
+      visibility:
+        moderate: "Navigation and route awareness may be affected."
+        high: "Poor visibility may make route-finding difficult."
+        severe: "Very poor visibility may make hiking unsuitable."
+
+    common_adjustments:
+      - start_earlier
+      - shorten_route
+      - choose_sheltered_route
+      - increase_rest_breaks
+      - carry_rain_protection
+      - review_latest_forecast_before_departure
+
+  commuting:
+    support: supported
+    exposure_level: variable
+
+    important_factors:
+      - rain_probability
+      - precipitation
+      - apparent_temperature
+      - wind
+      - visibility
+
+    interpretation:
+      rain_probability:
+        moderate: "Rain protection may be useful."
+        high: "Outdoor transfers may be disrupted."
+        severe: "Consider sheltered or alternative transport."
+
+      precipitation:
+        moderate: "Expect some wet-weather inconvenience."
+        high: "Flooding, delays, or difficult outdoor transfers are possible."
+        severe: "Travel disruption may be substantial."
+
+      apparent_temperature:
+        moderate: "Hydration and lighter clothing may help."
+        high: "Reduce outdoor walking where possible."
+        severe: "Prefer air-conditioned or sheltered transport."
+
+      wind:
+        moderate: "Umbrellas may be less effective."
+        high: "Outdoor walking and cycling may be difficult."
+        severe: "Avoid exposed travel where possible."
+
+      visibility:
+        moderate: "Allow more travel time."
+        high: "Road and cycling visibility may be reduced."
+        severe: "Avoid unnecessary exposed travel."
+
+    common_adjustments:
+      - bring_rain_protection
+      - use_sheltered_route
+      - switch_transport_mode
+      - allow_extra_travel_time
+      - reduce_outdoor_walking
+      - review_latest_forecast_before_departure
+
+fallback:
+  support: best_effort
+  activity_profile: general_outdoor
+  confidence_penalty: true
+  limitation: "No dedicated activity profile exists for this activity."
