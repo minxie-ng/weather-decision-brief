@@ -81,15 +81,14 @@ See [`docs/architecture.md`](docs/architecture.md) for the detailed design.
 
 ### 30-Second Demo
 
-[Watch the end-to-end Hermes demo](docs/assets/weather-decision-brief-demo.mp4)
+https://github.com/user-attachments/assets/04fcc52b-ea39-4113-91c3-33bd13537739
 
 The demo shows a natural hiking request, clarification of missing timing information, live forecast retrieval, structured validation, and the final activity-specific recommendation.
 
 ### Cycling Runtime Example
-T
-he skill was verified in Hermes Agent through Telegram. This example shows natural activation for a supported cycling request, forecast retrieval, structured decision creation, and validation.
+The skill was verified in Hermes Agent through Telegram. This example shows natural activation for a supported cycling request, forecast retrieval, structured decision creation, and validation.
 
-https://github.com/user-attachments/assets/5f888516-234d-4cbb-9d30-3b6ea12eeeca
+![Hermes runtime proof for a cycling decision](docs/assets/hermes-runtime-proof-cycling.png)
 
 ### Test Evidence
 
