@@ -83,6 +83,22 @@ The skill was verified in Hermes Agent through Telegram. This example shows natu
 
 ![Hermes runtime proof for a cycling decision](docs/assets/hermes-runtime-proof-cycling.png)
 
+### Test Evidence
+
+| Scenario | Result |
+|---|---|
+| Natural activation for hiking decision | Pass |
+| No activation for general weather query | Pass |
+| Missing required inputs | Pass |
+| Ambiguous location | Pass |
+| Supported cycling profile | Pass |
+| Unsupported kayaking fallback | Partial pass after safety improvement |
+| Python regression suite | 10/10 pass |
+| Clean-clone portability test | Pass |
+| Hermes installation and invocation | Pass |
+
+Full runtime observations are documented in [`docs/runtime-test-log.md`](docs/runtime-test-log.md).
+
 ## Requirements
 
 - Python 3
