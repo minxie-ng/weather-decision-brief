@@ -57,6 +57,7 @@ Unsupported activities use the `general_outdoor` fallback profile with reduced c
 Marine activities such as kayaking are not fully supported because V1 does not include tide, wave, or current data.
 
 ## How It Works
+![Weather Decision Brief architecture](weather-decision-brief-architecture.png)
 
 The core design principle is:
 
