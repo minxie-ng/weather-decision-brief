@@ -89,7 +89,7 @@ The demo shows a natural hiking request, clarification of missing timing informa
 T
 he skill was verified in Hermes Agent through Telegram. This example shows natural activation for a supported cycling request, forecast retrieval, structured decision creation, and validation.
 
-![Hermes runtime proof for a cycling decision](docs/assets/hermes-runtime-proof-cycling.png)
+https://github.com/user-attachments/assets/5f888516-234d-4cbb-9d30-3b6ea12eeeca
 
 ### Test Evidence
 
