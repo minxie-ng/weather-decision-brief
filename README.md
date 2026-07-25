@@ -94,23 +94,61 @@ If PyYAML is missing during agent use, the skill instructs the agent to explain 
 
 ## Installation
 
+### Standalone or Development Use
+
 1. Clone or download the repository.
 2. Open a terminal in the project root.
 3. Install the declared dependency:
-
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-4. Run the test suite to verify the installation:
-
+4. Run the regression suite:
 ```bash
 python3 -m unittest -v tests/test_core.py
 ```
 
 The current V1 workflow does not require an Open-Meteo API key.
 
-Exact Hermes installation instructions will be added after the clean-install and runtime integration tests.
+Agent Runtime Use
+
+This repository is designed for agent runtimes that can read SKILL.md instructions and execute local Python scripts.
+
+Hermes Agent — Verified
+
+Install the skill into the standard Hermes user-skills directory:
+```bash
+git clone https://github.com/minxie-ng/weather-decision-brief.git \
+  ~/.hermes/skills/weather-decision-brief
+```
+
+Install its declared dependency:
+```bash
+cd ~/.hermes/skills/weather-decision-brief
+python3 -m pip install -r requirements.txt
+```
+
+The integration has been tested with Hermes Agent through Telegram.
+
+To update an existing Hermes installation:
+
+cd ~/.hermes/skills/weather-decision-brief
+git pull
+
+Hermes may modify installed skill files through runtime self-improvement. Review and preserve useful local changes before pulling updates, because local modifications can block git pull.
+
+Other Agent Runtimes
+
+The skill may be adaptable to other runtimes that support skill instructions and local tool execution, such as OpenClaw or similar agent systems.
+
+Compatibility outside Hermes has not yet been verified. Installation paths, permissions, dependency handling and tool-execution configuration may differ by runtime.
+
+
+Then save with:
+
+```text
+Command + S
+```
 
 ## Usage
 
