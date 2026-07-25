@@ -77,6 +77,12 @@ This separation keeps calculations repeatable while still allowing contextual re
 
 See [`docs/architecture.md`](docs/architecture.md) for the detailed design.
 
+## Runtime Proof
+
+The skill was verified in Hermes Agent through Telegram. This example shows natural activation for a supported cycling request, forecast retrieval, structured decision creation, and validation.
+
+![Hermes runtime proof for a cycling decision](docs/assets/hermes-runtime-proof-cycling.png)
+
 ## Requirements
 
 - Python 3
